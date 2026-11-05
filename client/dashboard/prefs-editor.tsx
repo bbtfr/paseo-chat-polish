@@ -198,6 +198,7 @@ function ComposerEditor({ theme, prefs, onChange }: { theme: PluginTheme; prefs:
         </Row>
       </Group>
       {prefs.surfaces.composer === "hide" ? <Notice theme={theme}>Only composer pills fall back to Paseo's own styling. User messages, tool rows and markdown keep their current settings.</Notice> : null}
+      <Legend theme={theme} />
     </View>
   );
 }
