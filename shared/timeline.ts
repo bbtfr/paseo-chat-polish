@@ -66,7 +66,7 @@ export const prefsSchema = z.object({
   /** All native and third-party pills in the track above the composer, in px. */
   composerButtonIconSize: z.enum(["12", "13", "14", "16"]).default("13"),
   /** Track pill height; labelled pills keep their natural width. */
-  composerButtonSize: z.enum(["24", "26", "28"]).default("24"),
+  composerButtonSize: z.enum(["24", "26", "28", "32"]).default("24"),
   /** Keep the prominent sidebar entry, or open Chat Polish through Settings → Plugins / Command Center. */
   sidebarEntry: z.enum(["show", "hide"]).default("show"),
   /** A recap row the daemon adds after each turn that changed files or had a failing command. */

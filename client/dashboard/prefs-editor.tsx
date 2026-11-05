@@ -175,7 +175,7 @@ function ComposerEditor({ theme, prefs, onChange }: { theme: PluginTheme; prefs:
             theme={theme}
             value={prefs.composerButtonIconSize}
             onChange={(value) => onChange({ ...prefs, composerButtonIconSize: value })}
-            options={[["12", "", "12"], ["13", "", "13", true], ["14", "", "14"], ["16", "", "16"]]}
+            options={[["12", "", "12"], ["13", "", "13"], ["14", "", "14", true], ["16", "", "16"]]}
           />
         </Row>
         <Row theme={theme} label="Height" hint="Pills keep their natural width, so labels are never squeezed into an icon-only box.">
@@ -183,7 +183,7 @@ function ComposerEditor({ theme, prefs, onChange }: { theme: PluginTheme; prefs:
             theme={theme}
             value={prefs.composerButtonSize}
             onChange={(value) => onChange({ ...prefs, composerButtonSize: value })}
-            options={[["24", "", "24", true], ["26", "", "26"], ["28", "", "28"]]}
+            options={[["24", "", "24"], ["26", "", "26"], ["28", "", "28"], ["32", "", "32", true]]}
           />
         </Row>
       </Group>

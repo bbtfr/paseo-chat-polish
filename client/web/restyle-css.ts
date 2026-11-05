@@ -555,6 +555,7 @@ export const COMPOSER_BUTTON_CSS = `
 :root[data-cp-rt-track-icon="16"] { --cp-track-icon: 16px; }
 :root[data-cp-rt-track-height="26"] { --cp-track-height: 26px; }
 :root[data-cp-rt-track-height="28"] { --cp-track-height: 28px; }
+:root[data-cp-rt-track-height="32"] { --cp-track-height: 32px; }
 `;
 
 /** Keeps each surface independent without changing the established design. */

@@ -29,7 +29,7 @@ test("composer defaults keep every existing surface and use one track style", as
   assert.match(COMPOSER_BUTTON_CSS, /--cp-track-icon: 13px/);
   assert.match(COMPOSER_BUTTON_CSS, /--cp-track-height: 24px/);
   for (const size of [12, 13, 14, 16]) assert.match(COMPOSER_BUTTON_CSS, new RegExp(`data-cp-rt-track-icon="${size}"`));
-  for (const size of [26, 28]) assert.match(COMPOSER_BUTTON_CSS, new RegExp(`data-cp-rt-track-height="${size}"`));
+  for (const size of [26, 28, 32]) assert.match(COMPOSER_BUTTON_CSS, new RegExp(`data-cp-rt-track-height="${size}"`));
   assert.match(COMPOSER_TRACK_CSS, /composer-diff-stat-pill/);
   assert.doesNotMatch(COMPOSER_TRACK_CSS, /plugin-button-/);
   assert.match(COMPOSER_TRACK_CSS, /:has\(> \[data-testid="composer-diff-stat-pill"\]\)/);
