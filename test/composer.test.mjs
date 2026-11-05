@@ -38,6 +38,8 @@ test("composer defaults keep every existing surface and use one track style", as
   assert.match(COMPOSER_TRACK_CSS, /padding: 0 10px/);
   assert.match(COMPOSER_TRACK_CSS, /border-radius: 999px/);
   assert.match(COMPOSER_TRACK_CSS, /border-color: var\(--cp-rule\)/);
+  assert.match(actual, /\[role="alert"\] \{ position: relative/);
+  assert.match(actual, /\[role="alert"\]::before/);
 });
 
 test("each surface can independently fall back without changing the others", async () => {

@@ -63,6 +63,7 @@ const LIST_TREE_MASK = icon("ListTree", '<g stroke-width="1.5"><path d="M8 5h13"
 const SUMMARY_ICON = '[data-testid="turn-summary"] > button > div > div:first-child';
 const THUMBS =`:root:not([data-cp-rt-images="native"]) ${MSG} [data-paseo-markdown-tag="img"]`;
 const CLOCK_MASK = icon("Clock", '<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16.5 12"/>');
+const ERROR_MASK = icon("CircleAlert", '<circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/>');
 const REDRAW_MASK = icon("RefreshCw", '<path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/>');
 // Paseo renders a popover once hidden (inline opacity 0, or parked at -9999px) to measure it, then places it. Animating
 // that first frame would override the hiding and flash the popover in the window corner, so motion starts once placed.
@@ -224,6 +225,9 @@ ${COMPOSER_TRACK_CSS}
 /* Tooltips read as captions: 12px text in a tighter box than menus. */
 [role="tooltip"] { padding: 4px 8px !important; border-radius: 8px !important; border-color: var(--cp-rule, var(--colors-border)) !important; }
 [role="tooltip"] > [dir] { font-size: 12px !important; line-height: 16px !important; }
+/* Native composer/API errors arrive as bare role=alert text, outside the timeline NoticeItem. */
+[role="alert"] { position: relative !important; display: block !important; margin: 0 0 8px !important; padding: 10px 12px 10px 36px !important; border: 1px solid color-mix(in srgb, var(--colors-destructive) 28%, transparent) !important; border-radius: 10px !important; background: color-mix(in srgb, var(--colors-destructive) 10%, transparent) !important; color: var(--colors-destructive) !important; font-size: 13px !important; line-height: 18px !important; }
+[role="alert"]::before { content: ""; position: absolute; left: 12px; top: 11px; width: 14px; height: 14px; background: var(--colors-destructive); -webkit-mask: ${ERROR_MASK} center / contain no-repeat; mask: ${ERROR_MASK} center / contain no-repeat; }
 /* Timeline sync failed: the card shape of permission prompts, its text at the chat's secondary size; Retry is a secondary button (SECONDARY). */
 [data-testid="agent-timeline-sync-error"] { padding: 6px 6px 6px 14px !important; gap: 12px !important; border-radius: 12px !important; }
 [data-testid="agent-timeline-sync-error"] > [dir] { font-size: 13px !important; }
